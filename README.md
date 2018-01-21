@@ -6,14 +6,14 @@ My first Alfred workflow, I started developing at the 20th of January 2018.
 
 ### Features
 * Plotting with gnuPlot via Alfred:
-  Screenshots: TODO
+* Screenshots: TODO
 
 ### Requirements
 * Alfred (macOS only, v.3.5.1 tested) [Download here](https://www.alfredapp.com)
 * gnuPlot with `brew install gnuplot --with-cairo --with-x11` (PNGCairo required for nicer quality)
 
 ### Installation
-Best way is to simply click here for the Latest release: COMING SOON 
+Best way is to simply click here for the latest release: COMING SOON 
 ```bash
 git clone https://github.com/PhilippvK/alfred-workflows.git
 # TODO

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>de.philonata.phi.gnuplot</string>
+	<key>category</key>
+	<string>Tools</string>
+	<key>connections</key>
+	<dict>
+		<key>3E63F076-792D-464A-AE6F-A7AED4D0CCF3</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>CD321D1A-D466-48B3-9812-E426C32DCFEC</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>B11B132B-4A61-4C05-8F4F-2111F454E6C6</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>3E63F076-792D-464A-AE6F-A7AED4D0CCF3</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>philipp.van-kempen@tum.de</string>
+	<key>description</key>
+	<string>Plot Functions</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>gnuplot</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>paths</key>
+				<array>
+					<string>~/Git/alfred_gnuplot/plot.png</string>
+				</array>
+				<key>toggle</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.launchfiles</string>
+			<key>uid</key>
+			<string>CD321D1A-D466-48B3-9812-E426C32DCFEC</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>query="{query}"
+func=$(awk -F' ' '{print $1}' &lt;&lt;&lt; $query)
+range=$(awk -F' ' '{print $2}' &lt;&lt;&lt; $query)
+if [[ $range ]]; then
+  range2=" set xrange $range;"
+else
+  range2=" "
+fi
+/usr/local/bin/gnuplot -e "set terminal pngcairo enhanced font 'Calibri,20' fontscale 1.0 size 700,500; set zeroaxis; set xlabel 'x'; $range2 plot $func title '$func';" &gt; ~/Git/alfred_gnuplot/plot.png</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>3E63F076-792D-464A-AE6F-A7AED4D0CCF3</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>plot</string>
+				<key>subtext</key>
+				<string>with gnuplot</string>
+				<key>text</key>
+				<string>Plot Function</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>B11B132B-4A61-4C05-8F4F-2111F454E6C6</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>3E63F076-792D-464A-AE6F-A7AED4D0CCF3</key>
+		<dict>
+			<key>xpos</key>
+			<integer>270</integer>
+			<key>ypos</key>
+			<integer>50</integer>
+		</dict>
+		<key>B11B132B-4A61-4C05-8F4F-2111F454E6C6</key>
+		<dict>
+			<key>xpos</key>
+			<integer>50</integer>
+			<key>ypos</key>
+			<integer>50</integer>
+		</dict>
+		<key>CD321D1A-D466-48B3-9812-E426C32DCFEC</key>
+		<dict>
+			<key>xpos</key>
+			<integer>500</integer>
+			<key>ypos</key>
+			<integer>50</integer>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>https://github.com/PhilippvK/alfred-workflows</string>
+</dict>
+</plist>
